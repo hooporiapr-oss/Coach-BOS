@@ -22,6 +22,12 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 .nav-left{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo{height:30px;width:auto}
 .nav-label{font-family:'Bebas Neue',sans-serif;font-size:0.6rem;letter-spacing:2px;color:var(--muted);border-left:1px solid rgba(255,215,0,0.15);padding-left:10px;line-height:1.1}
+.nav-center{display:flex;gap:14px;align-items:center}
+.nav-link{font-size:0.62rem;font-weight:600;color:var(--sub);text-decoration:none;letter-spacing:0.5px;transition:color 0.3s}
+.nav-link:hover{color:var(--gold)}
+.nav-platform{font-size:0.55rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:50px;border:1px solid var(--teal);background:rgba(0,217,165,0.08);color:var(--teal);text-decoration:none;transition:all 0.3s;display:inline-flex;align-items:center;gap:5px}
+.nav-platform:hover{background:rgba(0,217,165,0.15);border-color:var(--teal);box-shadow:0 4px 20px rgba(0,217,165,0.15);transform:translateY(-1px)}
+.nav-right{display:flex;align-items:center;gap:10px}
 .lang-wrap{display:flex;gap:4px}
 .lang-btn{font-family:'Outfit',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:1px;padding:5px 12px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.3s}
 .lang-btn.on{background:linear-gradient(135deg,var(--gold),var(--orange));color:#0a0a0f;border-color:transparent}
@@ -111,6 +117,18 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 .el li{font-size:0.76rem;color:var(--sub);padding-left:18px;position:relative;line-height:1.55}
 .el li::before{content:'★';position:absolute;left:0;color:var(--gold);font-size:0.5rem;top:4px}
 
+/* CTA Section */
+.cta-section{text-align:center;padding:80px 0 40px;position:relative}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(255,215,0,0.08),transparent 70%);pointer-events:none}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:2px;color:var(--text);margin-bottom:12px}
+.cta-title b{color:var(--gold)}
+.cta-desc{font-size:0.88rem;color:var(--sub);max-width:480px;margin:0 auto 32px;line-height:1.7}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:16px 36px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--orange));color:#0a0a0f;transition:all 0.3s;box-shadow:0 4px 20px rgba(255,215,0,0.15)}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(255,215,0,0.3)}
+.cta-sub{font-size:0.6rem;color:var(--muted);margin-top:16px;letter-spacing:0.5px}
+.cta-sub a{color:var(--teal);text-decoration:none}
+.cta-sub a:hover{text-decoration:underline}
+
 /* Closing */
 .closing{text-align:center;padding:80px 0 100px}
 .closing .cl{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,4vw,2.3rem);letter-spacing:1px;color:var(--text);margin-bottom:14px}
@@ -132,12 +150,32 @@ body.ES .es{display:block}
 body.ES li.es{display:list-item}
 body.ES li.en{display:none}
 
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200}
+.hamburger span{display:block;width:22px;height:2px;background:var(--sub);border-radius:2px;transition:all 0.3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,0.97);backdrop-filter:blur(30px);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;transition:opacity 0.3s}
+.mobile-menu.open{display:flex;opacity:1}
+.mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px;color:var(--sub);text-decoration:none;padding:14px 0;transition:color 0.3s;text-align:center}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu .mm-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.2),transparent);margin:8px 0}
+.mobile-menu .mm-cta{font-family:'Outfit',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--orange));color:#0a0a0f;margin-top:12px}
+.mobile-menu .mm-platform{font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 28px;border-radius:50px;border:1px solid var(--teal);color:var(--teal);margin-top:6px}
+.mobile-menu .mm-lang{display:flex;gap:8px;margin-top:20px}
+.mobile-menu .mm-lang button{font-family:'Outfit',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:1px;padding:6px 16px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.3s}
+.mobile-menu .mm-lang button.on{background:linear-gradient(135deg,var(--gold),var(--orange));color:#0a0a0f;border-color:transparent}
+
 /* Mobile */
 @media(max-width:700px){
   .gg{grid-template-columns:1fr}
   .cover{padding:90px 16px 40px}
   .cover-img{width:110px;height:110px}
   .ex-head{flex-direction:column;text-align:center}
+  .nav-center{display:none}
+  .lang-wrap{display:none}
+  .hamburger{display:flex}
 }
 </style>
 </head>
@@ -151,9 +189,28 @@ body.ES li.en{display:none}
     <span class="nav-label en">FEATURES &<br>EXCLUSIVES</span>
     <span class="nav-label es">CARACTERÍSTICAS &<br>EXCLUSIVAS</span>
   </a>
-  <div class="lang-wrap">
-    <button class="lang-btn on" id="bEN" onclick="SL('en')">EN</button>
-    <button class="lang-btn" id="bES" onclick="SL('es')">ES 🇵🇷</button>
+  <div class="nav-center">
+    <a href="/" class="nav-link en">Coach BOS</a><a href="/" class="nav-link es">Coach BOS</a>
+    <a href="https://bosesports.com" class="nav-platform en">🎮 BOS Esports</a><a href="https://bosesports.com" class="nav-platform es">🎮 BOS Esports</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-wrap">
+      <button class="lang-btn on" id="bEN" onclick="SL('en')">EN</button>
+      <button class="lang-btn" id="bES" onclick="SL('es')">ES 🇵🇷</button>
+    </div>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" class="en">Coach BOS</a><a href="/" class="es">Coach BOS</a>
+  <div class="mm-divider"></div>
+  <a href="https://bosesports.com" class="mm-platform en">🎮 BOS Esports</a><a href="https://bosesports.com" class="mm-platform es">🎮 BOS Esports</a>
+  <a href="https://bosesports.com" class="mm-cta en">Start Training →</a><a href="https://bosesports.com" class="mm-cta es">Entrenar →</a>
+  <div class="mm-lang">
+    <button id="mEN" onclick="SL('en')">EN</button>
+    <button id="mES" onclick="SL('es')">ES 🇵🇷</button>
   </div>
 </div>
 
@@ -173,9 +230,7 @@ body.ES li.en{display:none}
   <p class="scroll es">Desplaza <span>↓</span></p>
 </section>
 
-<!-- ══════════════════════════════════ -->
 <!-- THE INVENTION MOMENT -->
-<!-- ══════════════════════════════════ -->
 <section class="sec">
 <div class="wrap">
   <div class="divider rv"></div>
@@ -205,9 +260,7 @@ body.ES li.en{display:none}
 </div>
 </section>
 
-<!-- ══════════════════════════════════ -->
 <!-- PLATFORM FEATURES -->
-<!-- ══════════════════════════════════ -->
 <section class="sec" style="background:linear-gradient(180deg,transparent,rgba(17,17,24,0.4),transparent)">
 <div class="wrap">
   <div class="divider rv"></div>
@@ -295,9 +348,7 @@ body.ES li.en{display:none}
 </div>
 </section>
 
-<!-- ══════════════════════════════════ -->
 <!-- COACH BOS — EXCLUSIVE -->
-<!-- ══════════════════════════════════ -->
 <section class="sec">
 <div class="wrap">
   <div class="divider rv"></div>
@@ -410,9 +461,22 @@ body.ES li.en{display:none}
 </div>
 </section>
 
-<!-- ══════════════════════════════════ -->
+<!-- CTA — ENTER THE PLATFORM -->
+<section class="cta-section rv">
+<div class="wrap" style="position:relative;z-index:1">
+  <div class="cta-glow"></div>
+  <h2 class="cta-title en">READY TO <b>TRAIN</b>?</h2>
+  <h2 class="cta-title es">¿LISTO PARA <b>ENTRENAR</b>?</h2>
+  <p class="cta-desc en">Step onto the platform. Pick your game, choose your tier, and let Coach BOS train your brain.</p>
+  <p class="cta-desc es">Entra a la plataforma. Elige tu juego, selecciona tu nivel, y deja que Coach BOS entrene tu cerebro.</p>
+  <a href="https://bosesports.com" class="cta-btn en">🎮 Enter BOS Esports →</a>
+  <a href="https://bosesports.com" class="cta-btn es">🎮 Entra a BOS Esports →</a>
+  <p class="cta-sub en">7-day free trial · No credit card required · <a href="/">Meet Coach BOS</a></p>
+  <p class="cta-sub es">Prueba gratis de 7 días · Sin tarjeta · <a href="/">Conoce a Coach BOS</a></p>
+</div>
+</section>
+
 <!-- CLOSING -->
-<!-- ══════════════════════════════════ -->
 <section class="closing">
 <div class="wrap">
   <div class="cl rv en">COACH BOS IS THE <b>PEACH BASKET</b>.</div>
@@ -431,8 +495,13 @@ function SL(l){
   document.body.className=l==='es'?'ES':'';
   document.getElementById('bEN').className='lang-btn'+(l==='en'?' on':'');
   document.getElementById('bES').className='lang-btn'+(l==='es'?' on':'');
+  var mE=document.getElementById('mEN'),mS=document.getElementById('mES');
+  if(mE){mE.className=l==='en'?'on':'';mS.className=l==='es'?'on':''}
   try{localStorage.setItem('bos-feat-lang',l)}catch(e){}
 }
+// Hamburger
+function toggleMenu(){var m=document.getElementById('mobileMenu'),b=document.getElementById('hbBtn');m.classList.toggle('open');b.classList.toggle('active');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
+function closeMenu(){var m=document.getElementById('mobileMenu'),b=document.getElementById('hbBtn');m.classList.remove('open');b.classList.remove('active');document.body.style.overflow=''}
 // Auto-detect
 (function(){
   try{var s=localStorage.getItem('bos-feat-lang');if(s){SL(s);return}}catch(e){}
